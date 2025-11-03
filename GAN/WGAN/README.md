@@ -1,36 +1,36 @@
-# WGAN-GP (Wasserstein GAN with Gradient Penalty) — PyTorch
+# WGAN (Wasserstein GAN) — PyTorch
 
-This project implements a **Wasserstein Generative Adversarial Network with Gradient Penalty (WGAN-GP)** using **PyTorch**.  
-The model can be trained on **MNIST** or **CelebA** datasets and generates realistic images from random noise.
+This repository implements a **Wasserstein Generative Adversarial Network (WGAN)** using **PyTorch**, trained on the **MNIST** dataset.  
+The implementation follows the original WGAN paper, using **weight clipping** to enforce the Lipschitz constraint.
 
 ---
 
 ## 🧠 Overview
 
-**WGAN-GP** improves training stability over traditional GANs by replacing the discriminator with a **critic** and enforcing the **Lipschitz constraint** using a **gradient penalty** instead of weight clipping.
+The **Wasserstein GAN (WGAN)** improves the training stability of GANs by using the **Wasserstein (Earth-Mover) distance** as a measure of similarity between real and generated distributions.  
+Instead of using a discriminator that classifies real/fake, WGAN uses a **critic** that scores how real an image looks.
 
-**Architecture Highlights:**
-- Deep Convolutional Generator and Critic (based on DCGAN)
-- Wasserstein loss function with Gradient Penalty
-- Training on 64×64 grayscale images (MNIST) or RGB images (CelebA)
-- TensorBoard integration for visualizing real and generated images
+### Key Idea
+
+- **Critic loss:** maximize \( E[D(x)] - E[D(G(z))] \)
+- **Generator loss:** minimize \( -E[D(G(z))] \)
+- Enforce **Lipschitz continuity** using **weight clipping** instead of gradient penalty.
 
 ---
 
 ## 🚀 Features
 
-- Stable GAN training using WGAN-GP loss  
-- Uses **InstanceNorm** (Critic) and **BatchNorm** (Generator)  
-- Customizable architecture through hyperparameters  
-- Simple dataset switch between **MNIST** and **CelebA**  
-- Real-time logging using **TensorBoard**
+- Fully convolutional **Generator** and **Critic** (based on DCGAN)
+- Wasserstein loss with **weight clipping**
+- Trains on **MNIST** (or **CelebA** with a single line change)
+- Logs training results with **TensorBoard**
+- Saves trained models (`generator.pth` and `discriminator.pth`)
 
 ---
 
 ## 🧩 Requirements
 
-Install the dependencies:
+Install the required libraries:
 
 ```bash
 pip install torch torchvision tensorboard
-
