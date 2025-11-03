@@ -13,8 +13,7 @@ Each project focuses on understanding core concepts, implementing popular archit
 | **Transformer** | Implementation of the original Transformer ("Attention Is All You Need") architecture. | PyTorch |
 | **GAN** | Basic Generative Adversarial Network for generating MNIST digits. | PyTorch |
 | **WGAN / WGAN-GP** | Improved GANs using Wasserstein loss and Gradient Penalty / Weight Clipping. | PyTorch |
-| **CNN** | Convolutional Neural Network for image classification. | PyTorch |
-| **Autoencoder** | Simple Autoencoder for dimensionality reduction and denoising. | PyTorch |
+
 
 *(You can expand this table as you add new projects.)*
 
